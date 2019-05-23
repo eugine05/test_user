@@ -14,9 +14,9 @@ class UserRoot(APIView):
     def get(self, request):
         userlast = request.GET.get("userlast")
         if userlast=='load':
-            users = User.objects.all()[:2]
+            users = User.objects.all()[:10]
         else:
-            users = User.objects.filter(id__gt=userlast)[:3]
+            users = User.objects.filter(id__gt=userlast)[:5]
         serializer = UserSerializer(users, many=True)
         return Response({"data": serializer.data})
 
