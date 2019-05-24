@@ -141,17 +141,19 @@
 					if ( pro==false) { alert("Телефон должен быть от 4 до 15 символов и без букв!")} else {this.form.telefon=new_tel}
 				}
 				
-                $.ajax({
+                if(pro==true) {
+					$.ajax({
                     url: "http://127.0.0.1:8000/api/v1/users/user/",
-                    type: "PATCH",
-                    data: this.form,
+                    type: "POST",
+                    data: this.createForm,
                     success: (response) => {
-                        
+                        alert('Пользователь добавлен.')
                     },
                     error: (response) => {
-                        alert(response.statusText)
+                        alert('Ошибка формы. Телефон не уникален.')
                     }
                 }) 
+				} 
             },
 			
 			
