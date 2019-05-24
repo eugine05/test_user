@@ -44,4 +44,4 @@ class UserRoot(APIView):
             serializer.save()
             return Response(status=201)
         else:
-            return Response(status=400)
+            return Response(serializer.errors,status=400)
