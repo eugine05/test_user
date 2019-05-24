@@ -142,18 +142,18 @@
 				}
 				
                 if(pro==true && this.createForm.first_name && this.createForm.full_name) {
-					$.ajax({
+                $.ajax({
                     url: "http://127.0.0.1:8000/api/v1/users/user/",
-                    type: "POST",
-                    data: this.createForm,
+                    type: "PATCH",
+                    data: this.form,
                     success: (response) => {
-                        alert('Пользователь добавлен.')
+                        
                     },
                     error: (response) => {
-                        alert('Ошибка формы. Телефон не уникален.')
+                        alert(response.statusText)
                     }
                 }) 
-				} 
+				}
             },
 			
 			
