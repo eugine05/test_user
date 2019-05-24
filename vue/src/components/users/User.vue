@@ -141,7 +141,7 @@
 					if ( pro==false) { alert("Телефон должен быть от 4 до 15 символов и без букв!")} else {this.form.telefon=new_tel}
 				}
 				
-                if(pro==true) {
+                if(pro==true && this.createForm.first_name && this.createForm.full_name) {
 					$.ajax({
                     url: "http://127.0.0.1:8000/api/v1/users/user/",
                     type: "POST",
@@ -174,6 +174,7 @@
 					if ( pro==false) { alert("Телефон должен быть от 4 до 15 символов и без букв!")} else {this.createForm.telefon=new_tel}
 				}
 				
+                if(pro==true && this.createForm.first_name && this.createForm.full_name) {
 				$.ajax({
                     url: "http://127.0.0.1:8000/api/v1/users/user/",
                     type: "POST",
@@ -185,6 +186,7 @@
                         alert('Ошибка формы. Телефон не уникален.')
                     }
                 }) 
+                } 
 			},
 			
 			// Удаление пользователя
