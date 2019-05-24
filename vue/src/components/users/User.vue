@@ -183,7 +183,7 @@
                         alert('Пользователь добавлен.')
                     },
                     error: (response) => {
-                        alert('Ошибка формы. Телефон не уникален.')
+                        alert(response.responseText)
                     }
                 }) 
                 } 
