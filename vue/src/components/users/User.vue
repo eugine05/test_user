@@ -147,7 +147,7 @@
                     type: "PATCH",
                     data: this.form,
                     success: (response) => {
-                        
+                        alert('Изменения внесены.')
                     },
                     error: (response) => {
                         alert(response.statusText)
