@@ -45,8 +45,3 @@ class UserRoot(APIView):
             return Response(status=201)
         else:
             return Response(serializer.errors,status=400)
-
-
-# sfsdlfks;dlfksl;d
-# qweqw
-# gfhfgh
